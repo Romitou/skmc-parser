@@ -5,13 +5,17 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/romitou/skriptmc-parser/structures"
 	"io/ioutil"
-	"log"
 	"math/rand"
 	"net/http"
 	"time"
 )
 
 func Parse(req structures.HTTPRequest) {
+	req.Gin.Header("Access-Control-Allow-Headers", "Content-Type")
+	req.Gin.Status(200)
+}
+
+func PostParse(req structures.HTTPRequest) {
 
 	requestBody, err := ioutil.ReadAll(req.Gin.Request.Body)
 	if err != nil {
@@ -50,8 +54,6 @@ func Parse(req structures.HTTPRequest) {
 
 	response, err := http.Post("http://"+parserNetwork.IPAddress+"/parse", "text/plain", bytes.NewBuffer(requestBody))
 	if err != nil || response.StatusCode != 200 {
-		log.Println(response.StatusCode)
-		log.Println(err)
 		req.Gin.JSON(500, gin.H{
 			"code":  2005,
 			"error": "Your request has been sent to a parser but it seems to return an error. Try your request again.",
