@@ -1,2 +1,24 @@
-.idea/
+# Binaries and build artifacts
+skmc-parser
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Local configurations & environment files
+config.local.yaml
 config.local.yml
+.env
+.env.*
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Test & coverage artifacts
+*.out
+*.test

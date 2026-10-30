@@ -1,4 +1,8 @@
-# SkriptMC-Parser configuration
+# SkriptMC-Parser - Core Configuration
+# This configuration file defines default runtime settings.
+# Sensitive values (such as Redis credentials) should be overridden via environment variables
+# (e.g. SKMC_REDIS_ADDRESS, SKMC_REDIS_USERNAME, SKMC_REDIS_PASSWORD) or config.local.yaml.
+
 version: "1.0.0"
 
 http:

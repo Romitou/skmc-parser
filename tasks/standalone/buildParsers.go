@@ -6,7 +6,7 @@ import (
 
 func BuildParsers() *structures.Task {
 	return &structures.Task{
-		Name: "rebuildParsers",
+		Name: "buildParsers",
 		Exec: func(ctx *structures.ParserContext) {
 			// TODO: make the task
 		},

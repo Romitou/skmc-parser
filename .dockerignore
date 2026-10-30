@@ -1,1 +1,11 @@
+.git
+.gitignore
+.idea/
+.vscode/
+config.local.yaml
 config.local.yml
+.env
+.env.*
+README.md
+LICENSE
+skmc-parser
